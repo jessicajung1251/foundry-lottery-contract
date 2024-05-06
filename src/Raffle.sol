@@ -35,6 +35,7 @@ contract Raffle is VRFConsumerBaseV2 {
     );
 
     /** State Variables */
+    // private visibility -> more control over access and additional logic 
     uint16 private constant REQUEST_CONFIRMATIONS = 3;
     uint32 private constant NUM_WORDS = 1;
 
@@ -172,6 +173,7 @@ contract Raffle is VRFConsumerBaseV2 {
     }
 
     /** Getter Functions */
+    // State variables of a contract are not directly accessible from outside the contract - if we want to allow other contracts/accounts to read the state of this contract, we need to provide getter functions 
 
     function getEntranceFee() external view returns (uint256) {
         return i_entranceFee;

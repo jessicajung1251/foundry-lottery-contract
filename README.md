@@ -41,7 +41,7 @@ This code is to create a proveably random smart contract lottery
 7. Return Deployed Contracts: it returns the deployed Raffle contract and the HelperConfig contract
 
 ## HelperConfig.s.sol
-1. This contract is used to manage the network configuration for the Raffle contract. It provides a structure NetworkConfig that holds all the necessary configuration parameters for the Raffle contract
+1. This contract is used to manage the deployment and network configuation for the Raffle contract. It provides a structure NetworkConfig that holds all the necessary configuration parameters for the Raffle contract
 2. In the constructor, it checks the chain id of the current network. If the chain id is 11155111, it sets the `activeNetworkConfig` to the Sepolia Ethereum network configuration by called the `getSepoliaEthConfig`. Otherwise, it sets the `activeNetworkConfig` to the Anvil Ethereum network configuration by called `getOrCreateAnvilEthConfig` 
 3. Get Sepolia ETH Configuration: the `getSepoliaEthConfig` function returns a hardcoded configuration for the Sepolia Ethereum network
 4. Get or Create Anvil Ethereum Configuration: the `getOrCreateAnvilEthConfig` function checks if the `vrfCoordinator` of the `activeNetworkConfig`. Otherwise, it creates a new `VRFCoordinatorV2Mock` and `LinkToken` contracts and returns a configuration that uses these contracts 
